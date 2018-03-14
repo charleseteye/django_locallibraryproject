@@ -1,0 +1,21 @@
+{% extends "catalog/base_template.html" %}
+
+ <title>{% block title %}All Authors{% endblock %}</title>
+
+{% block content %}
+    <h1>All Authors List</h1>
+
+    {% if author_list %}
+    <ul>
+
+      {% for author in author_list %}
+      <li>
+        <a href="{{ author.get_absolute_url }}">{{ author.first_name }}, {{ author.last_name }}</a> ({{author.date_of_birth}})
+      </li>
+      {% endfor %}
+
+    </ul>
+    {% else %}
+      <p>There are no books in the library.</p>
+    {% endif %}       
+{% endblock %}
