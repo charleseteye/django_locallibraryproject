@@ -1,7 +1,12 @@
 {% extends "catalog/base_template.html" %}
 
 {% block content %}
-    <h1>Book List</h1>
+    <div class="jumbotron">
+      
+      <h1 class="display-5"> Local library managements system </h1>
+
+
+      <h1>Book List</h1>
 
     {% if book_list %}
     <ul>
@@ -15,5 +20,6 @@
     </ul>
     {% else %}
       <p>There are no books in the library.</p>
-    {% endif %}       
+    {% endif %}  
+    </div>     
 {% endblock %}

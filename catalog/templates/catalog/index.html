@@ -5,14 +5,17 @@
 {% endblock title %}%}</title>
 
 {% block content %}
-<h1>Local Library Home</h1>
+<div class="jumbotron">
+	<h1>Local Library  Managent system built by django</h1>
 
   <p>Welcome to <em>LocalLibrary</em>, a very basic Django website developed for a local library.</p>
 
 <h2>Dynamic content</h2>
 
   <p>The library has the following record counts:</p>
-  <ul>
+
+  <div class="panel">
+  	<ul>
     <li><a href="{% url 'catalog:books'%}"><strong>Books:</strong> </a>{{ num_books }}</li>
     <li><strong>Copies:</strong> {{ num_instances }}</li>
     <li><strong>Copies available:</strong> {{ num_instances_available }}</li>
@@ -20,6 +23,12 @@
      <li><strong>Genres:</strong> {{ num_genres }}</li>
 
   </ul>
+  	
+  </div>
+  
+	
+</div>
+
 
   <p> You have visited this page
   {{ num_visits }}{% if num_visits == 1 %} time{% else %} times{% endif %}</p>
